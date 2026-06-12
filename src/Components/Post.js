@@ -10,7 +10,7 @@ const avatarGradients = [
   'linear-gradient(135deg, #4ECDC4, #6C63FF)',
 ];
 
-const Post = ({ title, description, time, comment_count, share_count, index = 0 }) => {
+const Post = (props) => {
   return (
     <article
       className="glass-card"
@@ -23,7 +23,7 @@ const Post = ({ title, description, time, comment_count, share_count, index = 0 
             width: '52px',
             height: '52px',
             borderRadius: '14px',
-            background: avatarGradients[index % avatarGradients.length],
+            background: avatarGradients[props.index % avatarGradients.length],
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -35,13 +35,13 @@ const Post = ({ title, description, time, comment_count, share_count, index = 0 
             letterSpacing: '-0.02em',
           }}
         >
-          {getInitials(title)}
+          {getInitials(props.title)}
         </div>
 
         {/* Body */}
         <div style={{ flex: 1, minWidth: 0 }}>
           <Link
-            to="/"
+            to={`/SinglePost/${props.id}`}
             style={{
               fontSize: '1.1rem',
               fontWeight: 700,
@@ -54,7 +54,7 @@ const Post = ({ title, description, time, comment_count, share_count, index = 0 
             onMouseEnter={e => e.currentTarget.style.color = 'var(--primary-light)'}
             onMouseLeave={e => e.currentTarget.style.color = 'var(--text-primary)'}
           >
-            {title}
+            {props.title}
           </Link>
 
           <p style={{
@@ -63,7 +63,7 @@ const Post = ({ title, description, time, comment_count, share_count, index = 0 
             lineHeight: 1.7,
             marginBottom: '16px',
           }}>
-            {description}
+            {props.description}
           </p>
 
           {/* Tags */}
@@ -83,18 +83,17 @@ const Post = ({ title, description, time, comment_count, share_count, index = 0 
           }}>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                🕐 {time}
+                🕐 {props.time}
               </span>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                💬 {comment_count} Comments
+                💬 {props.comment_count} Comments
               </span>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                🔗 {share_count} Shares
+                🔗 {props.share_count} Shares
               </span>
             </div>
 
-            <Link
-              to="/"
+            <Link to={`/SinglePost/${props.id}`}
               className="btn-v2 btn-outline-v2"
               style={{ padding: '6px 16px', fontSize: '0.8rem' }}
             >

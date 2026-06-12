@@ -1,10 +1,10 @@
-import Header from '../Components/Header';
-import LeftSidebar from '../Components/Sidebars/Left-Sidebar';
-import Alart from '../Components/Alart';
-import Post from '../Components/Post';
-import Carousel from '../Components/Carousel';
-import Footer from '../Components/Footer';
-import RightSidebar from '../Components/Sidebars/Right-Sidebar';
+import Header from "../Components/Header";
+import LeftSidebar from "../Components/Sidebars/Left-Sidebar";
+import Alart from "../Components/Alart";
+import Post from "../Components/Post";
+import Carousel from "../Components/Carousel";
+import Footer from "../Components/Footer";
+import RightSidebar from "../Components/Sidebars/Right-Sidebar";
 
 const posts = [
   {
@@ -56,16 +56,9 @@ const Home = () => {
         {/* Center: posts */}
         <main>
           <Alart />
-          {posts.map((post, i) => (
-            <Post
-              key={post.id}
-              index={i}
-              title={post.title}
-              description={post.description}
-              time={post.time}
-              comment_count={post.comment_count}
-              share_count={post.share_count}
-            />
+          {/* Articles */}
+          {posts.map((post) => (
+            <Post key={post.id} id={post.id} slug={post.slug} title={post.title} description={post.description} time={post.time} comment_count={post.comment_count} share_count={post.share_count} />
           ))}
         </main>
 

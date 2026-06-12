@@ -1,4 +1,5 @@
 import './App.css';
+import "./css/bootstrap.min.css";
 import "./css/custom.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -26,8 +27,6 @@ function App() {
           <Route path='/services/synergize' element={<Synergize />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/SinglePost/:id' element={<SinglePost />} />
-
-
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

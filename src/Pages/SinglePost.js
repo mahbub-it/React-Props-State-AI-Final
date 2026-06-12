@@ -6,6 +6,15 @@ import Footer from "../Components/Footer";
 import RightSidebar from "../Components/Sidebars/Right-Sidebar";
 import { useParams } from "react-router-dom";
 
+const products = [
+    { icon: '🌐', title: 'WebForge Pro', price: '$49/mo', desc: 'Full-stack web app builder with drag-and-drop components, real-time preview, and one-click deployment.', tags: ['Web', 'SaaS'], gradient: 'linear-gradient(135deg,#6C63FF,#4ECDC4)' },
+    { icon: '⚡', title: 'SpeedKit API', price: '$29/mo', desc: 'Blazing-fast RESTful API platform with auto-scaling, 99.99% uptime SLA, and global edge distribution.', tags: ['API', 'Cloud'], gradient: 'linear-gradient(135deg,#FF6B6B,#FFD93D)' },
+    { icon: '📊', title: 'Insight Dashboard', price: '$19/mo', desc: 'Real-time analytics and monitoring platform with custom KPIs, alerts, and beautiful report exports.', tags: ['Analytics', 'BI'], gradient: 'linear-gradient(135deg,#4ECDC4,#6C63FF)' },
+    { icon: '🔐', title: 'SecureVault', price: '$39/mo', desc: 'Enterprise-grade security suite with end-to-end encryption, audit logs, and compliance reporting.', tags: ['Security', 'Enterprise'], gradient: 'linear-gradient(135deg,#6C63FF,#FF6B6B)' },
+    { icon: '🤖', title: 'AutoFlow AI', price: '$59/mo', desc: 'Intelligent workflow automation powered by machine learning — eliminate repetitive tasks instantly.', tags: ['AI', 'Automation'], gradient: 'linear-gradient(135deg,#FFD93D,#FF6B6B)' },
+    { icon: '📱', title: 'AppLaunch Kit', price: '$99/mo', desc: 'Cross-platform mobile app development toolkit with React Native templates and CI/CD pipelines.', tags: ['Mobile', 'React Native'], gradient: 'linear-gradient(135deg,#4ECDC4,#FFD93D)' },
+];
+
 const SinglePost = () => {
     const { id } = useParams();
 
