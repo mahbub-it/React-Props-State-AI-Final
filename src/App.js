@@ -1,5 +1,5 @@
 import './App.css';
-import "./css/bootstrap.min.css";
+// import "./css/bootstrap.min.css";
 import "./css/custom.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
