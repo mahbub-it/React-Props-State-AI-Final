@@ -1,0 +1,131 @@
+/* =============================================
+   UTILITY CLASSES — V2
+   ============================================= */
+
+/* --- Glassmorphism Card --- */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* --- Gradient Text --- */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Buttons --- */
+.btn-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary-v2 {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+}
+
+.btn-primary-v2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.55);
+  color: #fff;
+}
+
+.btn-outline-v2 {
+  background: transparent;
+  color: var(--primary-light);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline-v2:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-ghost-v2 {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+}
+
+.btn-ghost-v2:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  border-color: var(--border-glass-hover);
+}
+
+/* --- Badge / Tag --- */
+.tag-v2 {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(108, 99, 255, 0.15);
+  color: var(--primary-light);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  letter-spacing: 0.02em;
+}
+
+/* --- Section Title --- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Gradient Divider --- */
+.gradient-divider {
+  height: 3px;
+  width: 60px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  margin: 0.75rem 0 1.5rem;
+}
+
+/* --- Container --- */
+.container-v2 {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Page wrapper --- */
+.page-wrapper {
+  padding-top: 80px;
+  min-height: 100vh;
+}
