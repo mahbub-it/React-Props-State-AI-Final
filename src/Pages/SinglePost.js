@@ -1,19 +1,8 @@
 import Header from "../Components/Header";
 import LeftSidebar from "../Components/Sidebars/Left-Sidebar";
-import Alart from "../Components/Alart";
-import Carousel from "../Components/Carousel";
 import Footer from "../Components/Footer";
 import RightSidebar from "../Components/Sidebars/Right-Sidebar";
 import { useParams } from "react-router-dom";
-
-const products = [
-    { icon: '🌐', title: 'WebForge Pro', price: '$49/mo', desc: 'Full-stack web app builder with drag-and-drop components, real-time preview, and one-click deployment.', tags: ['Web', 'SaaS'], gradient: 'linear-gradient(135deg,#6C63FF,#4ECDC4)' },
-    { icon: '⚡', title: 'SpeedKit API', price: '$29/mo', desc: 'Blazing-fast RESTful API platform with auto-scaling, 99.99% uptime SLA, and global edge distribution.', tags: ['API', 'Cloud'], gradient: 'linear-gradient(135deg,#FF6B6B,#FFD93D)' },
-    { icon: '📊', title: 'Insight Dashboard', price: '$19/mo', desc: 'Real-time analytics and monitoring platform with custom KPIs, alerts, and beautiful report exports.', tags: ['Analytics', 'BI'], gradient: 'linear-gradient(135deg,#4ECDC4,#6C63FF)' },
-    { icon: '🔐', title: 'SecureVault', price: '$39/mo', desc: 'Enterprise-grade security suite with end-to-end encryption, audit logs, and compliance reporting.', tags: ['Security', 'Enterprise'], gradient: 'linear-gradient(135deg,#6C63FF,#FF6B6B)' },
-    { icon: '🤖', title: 'AutoFlow AI', price: '$59/mo', desc: 'Intelligent workflow automation powered by machine learning — eliminate repetitive tasks instantly.', tags: ['AI', 'Automation'], gradient: 'linear-gradient(135deg,#FFD93D,#FF6B6B)' },
-    { icon: '📱', title: 'AppLaunch Kit', price: '$99/mo', desc: 'Cross-platform mobile app development toolkit with React Native templates and CI/CD pipelines.', tags: ['Mobile', 'React Native'], gradient: 'linear-gradient(135deg,#4ECDC4,#FFD93D)' },
-];
 
 const SinglePost = () => {
     const { id } = useParams();
@@ -22,6 +11,7 @@ const SinglePost = () => {
         {
             id: 1,
             title: "Shah Mahbubur Rahman",
+            profession: "Professional Full Stack Developer",
             description: "Professional Full Stack Developer. I have 10 years of experience in web development. My expertise includes Laravel, React, Node.js, Express.js, and more. I am passionate about building scalable and efficient web applications.",
             time: "2022-01-01",
             comment_count: "20",
@@ -51,59 +41,95 @@ const SinglePost = () => {
     return (
         <>
 
-            {/* Navigation */}
-            <Header />
+    {/* Navigation */}
+    <Header />
+    <div style={{ paddingTop: '72px' }}>
+        {/* Hero */}
+        <div className="page-hero">
+            <h1 className="gradient-text">{singlePost.title}</h1>
+            <div className="tag-v2" style={{ marginBottom: '16px', display: 'inline-block' }}>{singlePost.profession}</div>
+            
+        </div>
+        {/* 3-column content grid */}
+        <div className="home-grid">
+        {/* Left sidebar */}
+        <aside className="home-sidebar-left">
+          <LeftSidebar />
+        </aside>
 
-            <div className="jumbotron feature">
-                <div className="container">
-                    {/* Carousel */}
-                    <Carousel />
+        {/* Center: posts */}
+        <main>
+          {/* Articles */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+          <p
+            to={`/SinglePost/${singlePost.id}`}
+            style={{
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              color: 'var(--text-primary)',
+              textDecoration: 'none',
+              display: 'block',
+              marginBottom: '8px',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={e => e.currentTarget.style.color = 'var(--primary-light)'}
+            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-primary)'}
+          >
+            {singlePost.title}
+          </p>
 
-                </div>
+          <p style={{
+            color: 'var(--text-secondary)',
+            fontSize: '0.9rem',
+            lineHeight: 1.7,
+            marginBottom: '16px',
+          }}>
+            {singlePost.description}
+          </p>
+
+          
+          {/* Meta row */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '10px',
+          }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                🕐 {singlePost.time}
+              </span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                💬 {singlePost.comment_count} Comments
+              </span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                🔗 {singlePost.share_count} Shares
+              </span>
             </div>
 
-            <div className="container-fluid">
+            {/* Tags */}
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
+            <span className="tag-v2">keyword</span>
+            <span className="tag-v2" style={{ background: 'rgba(78,205,196,0.12)', color: 'var(--accent)', borderColor: 'rgba(78,205,196,0.25)' }}>tag</span>
+            <span className="tag-v2" style={{ background: 'rgba(255,107,107,0.12)', color: 'var(--secondary)', borderColor: 'rgba(255,107,107,0.25)' }}>post</span>
+          </div>
 
-                {/* Left Sidebar Column Start */}
-                <div className="col-sm-3">
+          </div>
+        </div>
+              
+        </main>
 
-                    <LeftSidebar />
+        {/* Right sidebar */}
+        <aside className="home-sidebar-right">
+          <RightSidebar />
+        </aside>
+      </div>
 
-                </div>{/* Left Sidebar Column End */}
-
-
-                {/* Center Column Start */}
-                <div className="col-sm-6">
-
-                    {/* Alert */}
-                    <Alart />
-
-                    {/* Articles */}
-                    <h1>{singlePost.title}</h1>
-                    <p>{singlePost.description}</p>
-                    <p>{singlePost.time}</p>
-                    <p>{singlePost.comment_count}</p>
-                    <p>{singlePost.share_count}</p>
-
-                    <hr />
-                </div>{/* /Center Column End */}
-
-
-                {/* Right Column Start */}
-                <div className="col-sm-3">
-
-                    <RightSidebar />
-
-
-                </div>{/* /Right Column End */}
-
-            </div>{/* /container-fluid */}
-
-            {/* Footer */}
-            <Footer />
-
-        </>
-    )
-}
+      <Footer />
+       </div>
+    </>
+  );
+};
 
 export default SinglePost;

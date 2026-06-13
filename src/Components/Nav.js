@@ -146,7 +146,7 @@ const Nav = ({ mobile, setMobileOpen }) => {
             <div
               style={{
                 position: 'absolute',
-                top: 'calc(100% + 8px)',
+                top: 'calc(100% + 2px)',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 background: 'rgba(13,13,26,0.96)',

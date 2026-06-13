@@ -66,13 +66,7 @@ const Post = (props) => {
             {props.description}
           </p>
 
-          {/* Tags */}
-          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
-            <span className="tag-v2">keyword</span>
-            <span className="tag-v2" style={{ background: 'rgba(78,205,196,0.12)', color: 'var(--accent)', borderColor: 'rgba(78,205,196,0.25)' }}>tag</span>
-            <span className="tag-v2" style={{ background: 'rgba(255,107,107,0.12)', color: 'var(--secondary)', borderColor: 'rgba(255,107,107,0.25)' }}>post</span>
-          </div>
-
+          
           {/* Meta row */}
           <div style={{
             display: 'flex',
@@ -99,6 +93,14 @@ const Post = (props) => {
             >
               Read More →
             </Link>
+
+            {/* Tags */}
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
+            <span className="tag-v2">keyword</span>
+            <span className="tag-v2" style={{ background: 'rgba(78,205,196,0.12)', color: 'var(--accent)', borderColor: 'rgba(78,205,196,0.25)' }}>tag</span>
+            <span className="tag-v2" style={{ background: 'rgba(255,107,107,0.12)', color: 'var(--secondary)', borderColor: 'rgba(255,107,107,0.25)' }}>post</span>
+          </div>
+
           </div>
         </div>
       </div>

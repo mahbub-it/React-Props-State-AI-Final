@@ -29,11 +29,11 @@ const LoginForm = () => {
                 <form style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
 
                     <div className="form-group">
-                        {loginSubmit && !email.includes('@') && (<p className="text-danger" style={{ marginTop: '0px', marginBottom: '10px', color: 'red' }}>Email ID is Invalid</p>)}
+                        {loginSubmit && !email.includes('@') && (<h5 className="text-danger" style={{ marginTop: '0px', marginBottom: '10px', color: '#ff6b6b', fontWeight: 'normal' }}>Email ID is Invalid</h5>)}
                         <input type="text" className="form-control input-v2" id="uid" name="uid" placeholder="Enter your email" onChange={emailOnChange} />
                     </div>
                     <div className="form-group">
-                        {loginSubmit && password.length < 6 && (<p className="text-danger" style={{ marginTop: '0px', marginBottom: '10px', color: 'red' }}>Minimum 6 characters password is required</p>)}
+                        {loginSubmit && password.length < 6 && (<h5 className="text-danger" style={{ marginTop: '0px', marginBottom: '10px', color: '#ff6b6b', fontWeight: 'normal' }}>Minimum 6 characters password is required</h5>)}
                         <input type="password" className="form-control input-v2" id="pwd" name="pwd" placeholder="Enter your Password" onChange={(e) => { setPassword(e.target.value); setLoginSubmit(false); }} />
                     </div>
                     <button onClick={handleSubmit} className="btn-v2 btn-primary-v2 center-block" style={{ width: '100%', justifyContent: 'center', marginTop: '4px' }}>
