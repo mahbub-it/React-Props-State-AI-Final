@@ -4,33 +4,33 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 0,
-    eyebrow: 'Unleash Your Potential',
-    title: 'Dramatically Engage',
-    description: 'Objectively innovate empowered manufactured products whereas parallel platforms.',
+    eyebrow: 'Professional Web Designer & Developer',
+    title: 'Share Your Thoughts',
+    description: 'I am a professional web designer and developer with 10 years of experience. I can design and develop any kind of website.',
     gradient: 'linear-gradient(135deg, #6C63FF22 0%, #4ECDC422 100%)',
     cta: 'Explore Services',
     ctaLink: '/services',
-    emoji: '🚀',
+    emoji: '💻',
   },
   {
     id: 1,
-    eyebrow: 'Scale Efficiently',
-    title: 'Efficiently Unleash',
-    description: 'Dramatically maintain clicks-and-mortar solutions without functional solutions.',
+    eyebrow: 'Bug Fixer',
+    title: 'Fix Your Bugs',
+    description: 'I am a professional bug fixer with 10 years of experience. I can fix any kind of bug.',
     gradient: 'linear-gradient(135deg, #FF6B6B22 0%, #FFD93D22 100%)',
     cta: 'Learn More',
     ctaLink: '/about',
-    emoji: '⚡',
+    emoji: '🪲',
   },
   {
     id: 2,
-    eyebrow: 'Think Beyond',
-    title: 'Proactively Pontificate',
-    description: 'Holistically pontificate installed base portals after maintainable products.',
+    eyebrow: 'Web Server Issues',
+    title: 'Fix Your Web Server Issues',
+    description: 'I am a professional web server fixer with 10 years of experience. I can fix any kind of web server issues.',
     gradient: 'linear-gradient(135deg, #4ECDC422 0%, #6C63FF22 100%)',
     cta: 'Contact Us',
     ctaLink: '/contact',
-    emoji: '✨',
+    emoji: '🗄️',
   },
 ];
 
@@ -82,7 +82,7 @@ const Carousel = () => {
                 {slide.cta} →
               </Link>
               <Link to="/" className="btn-v2 btn-outline-v2">
-                Watch Demo
+                View Portfolio
               </Link>
             </div>
           </div>

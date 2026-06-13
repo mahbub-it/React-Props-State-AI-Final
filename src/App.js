@@ -27,6 +27,9 @@ function App() {
           <Route path='/services/synergize' element={<Synergize />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/SinglePost/:id' element={<SinglePost />} />
+          {/* alias route so Post links to /post/:id continue to work */}
+          <Route path='/post/:id' element={<SinglePost />} />
+        
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

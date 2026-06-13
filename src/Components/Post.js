@@ -11,6 +11,7 @@ const avatarGradients = [
 ];
 
 const Post = (props) => {
+  const { showReadMore = true } = props;
   return (
     <article
       className="glass-card"
@@ -40,22 +41,36 @@ const Post = (props) => {
 
         {/* Body */}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <Link
-            to={`/SinglePost/${props.id}`}
-            style={{
-              fontSize: '1.1rem',
-              fontWeight: 700,
-              color: 'var(--text-primary)',
-              textDecoration: 'none',
-              display: 'block',
-              marginBottom: '8px',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={e => e.currentTarget.style.color = 'var(--primary-light)'}
-            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-primary)'}
-          >
-            {props.title}
-          </Link>
+          {showReadMore ? (
+            <Link
+              to={`/post/${props.id}`}
+              style={{
+                fontSize: '1.1rem',
+                fontWeight: 700,
+                color: 'var(--text-primary)',
+                textDecoration: 'none',
+                display: 'block',
+                marginBottom: '8px',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--primary-light)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-primary)'}
+            >
+              {props.title}
+            </Link>
+          ) : (
+            <div
+              style={{
+                fontSize: '1.1rem',
+                fontWeight: 700,
+                color: 'var(--text-primary)',
+                display: 'block',
+                marginBottom: '8px',
+              }}
+            >
+              {props.title}
+            </div>
+          )}
 
           <p style={{
             color: 'var(--text-secondary)',
@@ -87,12 +102,14 @@ const Post = (props) => {
               </span>
             </div>
 
-            <Link to={`/SinglePost/${props.id}`}
-              className="btn-v2 btn-outline-v2"
-              style={{ padding: '6px 16px', fontSize: '0.8rem' }}
-            >
-              Read More →
-            </Link>
+            {showReadMore && (
+              <Link to={`/post/${props.id}`}
+                className="btn-v2 btn-outline-v2"
+                style={{ padding: '6px 16px', fontSize: '0.8rem' }}
+              >
+                Read More →
+              </Link>
+            )}
 
             {/* Tags */}
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
